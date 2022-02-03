@@ -39,6 +39,9 @@
                     <div class="dateTime">{{ post.createdAt }}</div>
                     <p>{{ post.body }}</p>
                 </div>
+                <div class="likes">
+                    <a href="/addLike/{{ post.id }}">Like</a>{{ post.likes }}
+                </div>
             </li>
             {% endfor %}
         </ul>

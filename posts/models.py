@@ -17,6 +17,9 @@ class Post(models.Model):
         db_index=True
     )
 
+    likes = models.IntegerField(
+        'Likes', blank=False, null=False, db_index=True, default=0)
+
     createdAt = models.DateTimeField(
         'Created DateTime', blank=True, auto_now_add=True
     )

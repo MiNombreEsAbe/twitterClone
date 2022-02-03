@@ -39,3 +39,17 @@ def delete(req, post_id):
 
     # Redirect to home
     return HttpResponseRedirect('/')
+
+
+def addLike(req, post_id):
+    # Find the post based on the id
+    post = Post.objects.get(id=post_id)
+
+    # Increment the likes of the post by 1
+    post.likes += 1
+
+    # Save the post
+    post.save()
+
+    # Redirect the user to the home page
+    return HttpResponseRedirect('/')
