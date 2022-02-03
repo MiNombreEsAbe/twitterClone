@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 basepath = Path()
 basedir = str(basepath.cwd())
-DOTENV_FILE = basedir + '\settings.env'
+DOTENV_FILE = basedir + '\.env'
 env_config = Config(RepositoryEnv(DOTENV_FILE))
 SECRET_KEY = env_config.get('SECRET_KEY')
 
