@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from decouple import Config, RepositoryEnv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w26m*&&gg!=41vumy-h(^ms%g8vbj+c-55ye9e@m!0rj8mdb#5'
+basepath = Path()
+basedir = str(basepath.cwd())
+DOTENV_FILE = basedir + '\settings.env'
+env_config = Config(RepositoryEnv(DOTENV_FILE))
+SECRET_KEY = env_config.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
