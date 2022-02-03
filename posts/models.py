@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -18,8 +19,12 @@ class Post(models.Model):
     )
 
     likes = models.IntegerField(
-        'Likes', blank=False, null=False, db_index=True, default=0)
+        'Likes', blank=True, null=False, db_index=True, default=0)
 
     createdAt = models.DateTimeField(
         'Created DateTime', blank=True, auto_now_add=True
     )
+
+
+class Photo(models.Model):
+    image = CloudinaryField('image')
