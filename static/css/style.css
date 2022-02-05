@@ -2,6 +2,8 @@
 html,
 body {
     height: 100%;
+    margin: 0;
+    font-family: sans-serif;
 }
 
 .content {
@@ -12,23 +14,87 @@ body {
     border-right: 1px solid #ccc;
 }
 
-/* Post */
-.postForm {
-    padding: 20px 40px;
+/* Header */
+.header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid #ccc;
 }
 
-.postForm input {
-    width: 70%;
+.header .headerText {
+    margin: 0 0 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header .techisLogo {
+    width: 9%;
+}
+
+/* Post */
+.postForm {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: flex-start;
+}
+
+.postForm .userIcon {
+    width: 12%;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.postForm form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.postForm input,
+.postForm textarea {
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.postForm .nameInput,
+.postForm textarea {
+    width: auto;
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.postForm .nameInput:focus,
+.postForm textarea:focus {
+    outline: none;
+}
+
+.postForm .nameInput {
+    background-color: #49a8ff33;
+    border: none;
 }
 
 .postForm textarea {
-    width: 70%;
-    padding: 10px;
+    height: 150px;
     border: 1px solid #ccc;
+    resize: none;
+}
+
+.postForm .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postForm .buttons .submitButton {
+    padding: 7px 15px;
+    background-color: #3a92df;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
 }
 
 .posts ul {

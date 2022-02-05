@@ -1,22 +1,41 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 <section class="content">
+    <section class="header">
+        <img
+            class="techisLogo"
+            src="{% static 'img/techislogo.svg' %}"
+            alt="Tech I.S. Logo"
+        />
+        <h1 class="headerText">Home</h1>
+    </section>
     <section class="postForm">
-        <form action="/" method="POST" enctype="multipart/form-data">
+        <img class="userIcon" src="{% static 'img/user.jpg' %}" alt="" />
+        <form
+            action="/"
+            method="POST"
+            enctype="multipart/form-data"
+            autocomplete="off"
+        >
             {% csrf_token %}
             <input
+                class="nameInput"
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="Your Name"
                 maxlength="14"
                 required
             />
             <textarea
                 name="body"
-                placeholder="Tell us anything"
+                placeholder="What's happening?"
                 required
             ></textarea>
-            <input type="file" name="image" />
-            <input type="submit" value="Post" />
+            <div class="buttons">
+                <div class="fileInput">
+                    <input type="file" name="image" />
+                </div>
+                <input class="submitButton" type="submit" value="Tweet" />
+            </div>
         </form>
     </section>
     <section class="posts">
