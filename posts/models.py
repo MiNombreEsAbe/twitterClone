@@ -25,6 +25,4 @@ class Post(models.Model):
         'Created DateTime', blank=True, auto_now_add=True
     )
 
-
-class Photo(models.Model):
-    image = CloudinaryField('image')
+    image = CloudinaryField('image', blank=True, db_index=True)

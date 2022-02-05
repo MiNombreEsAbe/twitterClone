@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 <section class="content">
     <section class="postForm">
-        <form action="/" method="POST">
+        <form action="/" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <input
                 type="text"
@@ -15,6 +15,7 @@
                 placeholder="Tell us anything"
                 required
             ></textarea>
+            <input type="file" name="image" />
             <input type="submit" value="Post" />
         </form>
     </section>
@@ -42,6 +43,9 @@
                 <div class="likes">
                     <a href="/addLike/{{ post.id }}">Like</a>{{ post.likes }}
                 </div>
+                {% if post.image %}
+                <img src="{{ post.image.url }}" alt="" />
+                {% endif %}
             </li>
             {% endfor %}
         </ul>

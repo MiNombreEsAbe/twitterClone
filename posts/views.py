@@ -11,7 +11,8 @@ from .forms import Postform
 def index(req):
     # If method = post
     if req.method == 'POST':
-        form = Postform(req.POST)
+        form = Postform(req.POST, req.FILES)
+        print(req.POST, req.FILES)
 
         # If form = valid, save
         if form.is_valid():
@@ -24,7 +25,7 @@ def index(req):
         return HttpResponseRedirect(form.errors.as_json())
 
     # Get all posts
-    posts = Post.objects.all()[:20]
+    posts = Post.objects.all().order_by('-createdAt')[:20]
 
     # Show the page
     return render(req, 'posts.html', {'posts': posts})
