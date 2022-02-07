@@ -117,6 +117,7 @@ body {
 
 .postForm .buttons .visibleFileInput p {
     margin: 0 10px;
+    overflow-x: auto;
 }
 
 .postForm .buttons .uploadLabel,
@@ -181,8 +182,23 @@ body {
     display: none;
 }
 
+.posts li .menu .menuHolder {
+    display: flex;
+    flex-direction: column;
+}
+
 .posts li .menu a {
     text-decoration: none;
+}
+
+.posts li .menu .menuHolder .deleteButton {
+    margin-bottom: 5px;
+    color: #a20e0e;
+}
+
+.posts li .menu .menuHolder .editButton {
+    margin-bottom: 5px;
+    color: #b87e2f;
 }
 
 .posts li .logo {

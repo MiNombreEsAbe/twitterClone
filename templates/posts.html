@@ -58,9 +58,16 @@
                     alt="Menu icon"
                 />
                 <div class="menu">
-                    <a href="/delete/{{ post.id }}">Delete</a>
-                    <a href="/edit/{{ post.id }}">Edit</a>
-                    <!-- <i class="fas fa-trash-alt"></i> -->
+                    <div class="menuHolder">
+                        <a class="deleteButton" href="/delete/{{ post.id }}">
+                            Delete
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                        <a class="editButton" href="/edit/{{ post.id }}">
+                            Edit
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="logo">
                     <img src="{% static 'img/user.jpg' %}" alt="User img" />
