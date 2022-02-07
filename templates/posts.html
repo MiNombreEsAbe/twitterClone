@@ -31,9 +31,18 @@
                 required
             ></textarea>
             <div class="buttons">
-                <div class="fileInput">
-                    <input type="file" name="image" />
+                <div class="visibleFileInput">
+                    <label class="uploadLabel" for="inputForFile">
+                        Upload Image
+                    </label>
+                    <p id="fileName"></p>
                 </div>
+                <input
+                    id="inputForFile"
+                    class="fileInput"
+                    type="file"
+                    name="image"
+                />
                 <input class="submitButton" type="submit" value="Tweet" />
             </div>
         </form>
