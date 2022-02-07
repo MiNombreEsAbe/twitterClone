@@ -42,6 +42,21 @@ def delete(req, post_id):
     return HttpResponseRedirect('/')
 
 
+def edit(req, post_id):
+    post = Post.objects.get(id=post_id)
+
+    if req.method == "POST":
+        form = Postform(req.POST, req.FILES, instance=post)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+        else:
+            return HttpResponseRedirect(form.errors.as_json())
+
+    return render(req, 'edit.html', {'post': post})
+
+
 def addLike(req, post_id):
     # Find the post based on the id
     post = Post.objects.get(id=post_id)

@@ -14,6 +14,12 @@ body {
     border-right: 1px solid #ccc;
 }
 
+.content .divider {
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+}
+
 /* Header */
 .header {
     padding: 10px;
@@ -50,6 +56,13 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.postForm .uploadedImage {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .postForm input,
@@ -107,7 +120,8 @@ body {
 }
 
 .postForm .buttons .uploadLabel,
-.postForm .buttons .submitButton {
+.postForm .buttons .submitButton,
+.postForm .buttons .endingButtons a {
     padding: 7px 15px;
     font-weight: bold;
     border: none;
@@ -128,6 +142,12 @@ body {
 
 .postForm .buttons .submitButton {
     background-color: #3a92df;
+    color: #fff;
+}
+
+.postForm .buttons .endingButtons a {
+    text-decoration: none;
+    background-color: #717171;
     color: #fff;
 }
 
@@ -178,17 +198,20 @@ body {
     width: 100%;
 }
 
-.posts li .postBodyHolder .imgHolder {
+.posts li .postBodyHolder .imgHolder,
+.postForm .uploadedImageHolder {
     width: 100%;
     height: 300px;
     margin-bottom: 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid #ccc;
     overflow: hidden;
 }
 
-.posts li .postBodyHolder .imgHolder img {
+.posts li .postBodyHolder .imgHolder img,
+.postForm .uploadedImageHolder .uploadedImage {
     width: 100%;
+    border-radius: 5px;
 }
 
 .posts li .nameBody {

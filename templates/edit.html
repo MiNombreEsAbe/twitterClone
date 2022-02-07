@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<section class="content">
+    <section class="header">
+        <img
+            class="techisLogo"
+            src="{% static 'img/techislogo.svg' %}"
+            alt="Tech I.S. Logo"
+        />
+        <h1 class="headerText">Home</h1>
+    </section>
+    <section class="postForm">
+        <img class="userIcon" src="{% static 'img/user.jpg' %}" alt="" />
+        <form
+            action="/edit/{{ post.id }}/"
+            method="POST"
+            enctype="multipart/form-data"
+            autocomplete="off"
+        >
+            {% csrf_token %}
+            <input
+                class="nameInput"
+                type="text"
+                name="name"
+                value="{{ post.name }}"
+                maxlength="14"
+                required
+            />
+            <textarea name="body" placeholder="What's happening?" required>
+{{ post.body }}</textarea
+            >
+            {% if post.image %}
+            <div class="uploadedImageHolder">
+                <img class="uploadedImage" src="{{ post.image.url }}" alt="" />
+            </div>
+            {% endif %}
+            <div class="buttons">
+                <div class="visibleFileInput">
+                    <label class="uploadLabel" for="inputForFile">
+                        Upload Image
+                    </label>
+                    <p id="fileName"></p>
+                </div>
+                <input
+                    id="inputForFile"
+                    class="fileInput"
+                    type="file"
+                    name="image"
+                />
+                <div class="endingButtons">
+                    <a href="/">Cancel</a>
+                    <input class="submitButton" type="submit" value="Edit" />
+                </div>
+            </div>
+        </form>
+    </section>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'js/post.js' %}"></script>
+</section>
+{% endblock %}
