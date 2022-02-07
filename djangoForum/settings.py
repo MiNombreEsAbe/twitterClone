@@ -32,9 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = []
+DEBUG = True
 
 
 # Application definition
@@ -150,4 +148,4 @@ cloudinary.config(
 # Stuff i needed for Heroku
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATIC_URL = '/static/'
-ALLOWED_HOSTS = ["abestwitterclone.herokuapp.com"]
+ALLOWED_HOSTS = ['*']
