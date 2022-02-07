@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-from decouple import Config, RepositoryEnv
+# from decouple import Config, RepositoryEnv
+import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -24,11 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-basepath = Path()
-basedir = str(basepath.cwd())
-DOTENV_FILE = basedir + '\.env'
-env_config = Config(RepositoryEnv(DOTENV_FILE))
-SECRET_KEY = env_config.get('SECRET_KEY')
+# basepath = Path()
+# basedir = str(basepath.cwd())
+# DOTENV_FILE = basedir + '\.env'
+# env_config = Config(RepositoryEnv(DOTENV_FILE))
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -135,8 +136,9 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Configure cloudinary
 cloudinary.config(
-    cloud_name=env_config.get('CLOUD_NAME'),
-    api_key=env_config.get('API_KEY'),
-    api_secret=env_config.get('API_SECRET')
+    cloud_name=os.environ['CLOUD_NAME'],
+    api_key=os.environ['API_KEY'],
+    api_secret=os.environ['API_SECRETY']
 )
