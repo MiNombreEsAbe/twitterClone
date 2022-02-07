@@ -143,5 +143,7 @@ cloudinary.config(
     api_secret=os.environ['API_SECRET']
 )
 
+# Stuff i needed for Heroku
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+ALLOWED_HOSTS = ["abestwitterclone.herokuapp.com"]
