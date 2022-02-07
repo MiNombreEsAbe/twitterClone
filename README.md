@@ -17,3 +17,7 @@ To post, you should fill out the name and message field. If you want, you can ad
 - Django
 - Jinja
 - Fontawesome
+
+## Important Resources
+- [Deploy To Heroku With Django Video](https://www.youtube.com/watch?v=GMbVzl_aLxM)
+- [Use Static Assets In Deployment](https://devcenter.heroku.com/articles/django-assets)
