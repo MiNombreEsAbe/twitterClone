@@ -142,3 +142,6 @@ cloudinary.config(
     api_key=os.environ['API_KEY'],
     api_secret=os.environ['API_SECRET']
 )
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
