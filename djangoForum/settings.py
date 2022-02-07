@@ -84,12 +84,12 @@ WSGI_APPLICATION = 'djangoForum.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd76v2k4f2bqcq1',
-        'USER': 'djynfczeldgzri',
-        'HOST': 'ec2-3-227-15-75.compute-1.amazonaws.com',
-        'PASSWORD': 'e9eea41cdb9fd88b59fc96a57d06d6cd28ec702a0db5767367d9ace2cf223e69',
-        'PORT': '5432'
+        'ENGINE': os.environ['HEROKU_ENGINE'],
+        'NAME': os.environ['HEROKU_NAME'],
+        'USER': os.environ['HEROKU_USER'],
+        'HOST': os.environ['HEROKU_HOST'],
+        'PASSWORD': os.environ['HEROKU_PASSWORD'],
+        'PORT': os.environ['HEROKU_PORT']
     }
 }
 
